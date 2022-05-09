@@ -15,8 +15,6 @@ public class FacilityDto {
     @Size(max = 10)
     private String title;
     @NotBlank
-    @Size(max = 4)
-    @Pattern(regexp = "[0-9]+")
     private int price;
 
 }

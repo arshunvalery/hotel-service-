@@ -6,4 +6,6 @@ public interface RoomDao extends BaseDao<Room> {
     Room changeStatus(Room room);
 
     Room autoChangeStatus(Room room);
+
+    Boolean existsByRoomNumber(String number);
 }

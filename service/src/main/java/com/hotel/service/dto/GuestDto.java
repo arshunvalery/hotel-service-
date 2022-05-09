@@ -2,6 +2,7 @@ package com.hotel.service.dto;
 
 import lombok.Data;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.util.UUID;
@@ -18,8 +19,6 @@ public class GuestDto {
     @Size(max = 7)
     @Pattern(regexp = "[0-9]+")
     private String tel;
-    @Size(max = 2)
-    @Pattern(regexp = "^[1-9][0-9]*")
-    private int age;
+    private Integer age;
     private String gender;
 }

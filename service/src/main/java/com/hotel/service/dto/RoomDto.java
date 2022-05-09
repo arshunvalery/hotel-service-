@@ -14,7 +14,5 @@ public class RoomDto {
     @Pattern(regexp = "^[1-9][0-9]*")
     private String number;
     private RoomStatus status;
-    @Size(max = 4)
-    @Pattern(regexp = "^[1-9][0-9]*")
     private int price;
 }

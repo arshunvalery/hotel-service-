@@ -1,6 +1,6 @@
 package com.hotel.service.impl;
 
-import com.hotel.dao.api.UserDao;
+import com.hotel.dao.api.UsrDao;
 import com.hotel.dao.model.User;
 import com.hotel.dao.model.enums.SortedKey;
 import com.hotel.service.api.mapper.UserMapper;
@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
 public class UserServiceImpl implements UserService {
 
     private final UserMapper mapper;
-    private final UserDao userDao;
+    private final UsrDao userDao;
 
     @Transactional
     @Override

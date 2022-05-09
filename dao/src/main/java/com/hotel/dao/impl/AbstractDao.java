@@ -2,11 +2,13 @@ package com.hotel.dao.impl;
 
 import com.hotel.dao.api.BaseDao;
 import com.hotel.dao.model.BaseEntity;
+import com.hotel.dao.model.enums.SortedKey;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -20,6 +22,7 @@ public abstract class AbstractDao<ENTITY extends BaseEntity> implements BaseDao<
 
     @Override
     public ENTITY save(ENTITY entity) {
+
         entityManager.persist(entity);
         return entity;
     }

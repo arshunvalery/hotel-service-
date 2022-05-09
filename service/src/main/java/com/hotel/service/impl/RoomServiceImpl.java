@@ -4,6 +4,7 @@ import com.hotel.dao.api.RoomDao;
 import com.hotel.dao.model.Room;
 import com.hotel.dao.model.enums.RoomStatus;
 import com.hotel.dao.model.enums.SortedKey;
+import com.hotel.service.exceptions.ResourceIsUsedException;
 import com.hotel.service.exceptions.ResourceNotFoundException;
 import com.hotel.service.api.mapper.RoomMapper;
 import com.hotel.service.api.service.RoomService;
@@ -31,6 +32,12 @@ public class RoomServiceImpl implements RoomService {
     public RoomDto create(RoomDto dto) {
         log.info("Я - МЕТОД СОЗДАНИЯ В СЕРВИСЕ КОМНАТЫ!!!");
         Room entity = mapper.toEntity(dto);
+
+        if(!roomDao.existsByRoomNumber(entity.getNumber()))
+        {
+           throw new ResourceIsUsedException("Комната", "номером", entity.getNumber());
+        }
+
         entity.setStatus(RoomStatus.FREE);
         return mapper.toDto(roomDao.save(entity));
     }

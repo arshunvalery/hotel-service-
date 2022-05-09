@@ -13,7 +13,6 @@ import java.util.Collection;
 import java.util.UUID;
 
 @Slf4j
-@Validated
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/guests")
